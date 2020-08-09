@@ -6,6 +6,22 @@
     # language
 # Type 'python' in terminal for interactive terminal
 
+'''
+  Implementing A HashMap In Python vs. C++
+
+  Python:
+    hash = {}
+    for i in hash:
+      print i
+
+  C++:
+    std::unordered_map<int, int> hash; 
+    for (auto i = order.begin(); i != order.end(); i++) { 
+      std::cout<<i;
+  }
+  
+'''
+
 
 # Create
 hash = {}
