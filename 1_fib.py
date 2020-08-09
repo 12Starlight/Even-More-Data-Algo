@@ -1,3 +1,4 @@
+# Fib Recursive # Fib Iterative
 class Solution:
     def fib(self, n):
       if n == 0:
@@ -25,6 +26,7 @@ print Solution().fib(10)
 print Solution().fibIterative(10)
   
 
+# Banned Maximum Number Of Colored Squares Connected To Each Other
 class Solution:
   def maxConnected(self, grid):
     maxCount = 0
@@ -99,6 +101,5 @@ grid = [
 ]
 
 print Solution().maxConnected(grid)
-
 
 
