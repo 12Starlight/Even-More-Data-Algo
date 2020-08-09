@@ -1,5 +1,13 @@
 # LinkedList
 
+'''
+  Linked Lists are usually a list of nodes. And each node has a 'Value' and a
+  'Next' where 'Next stores the address of the next node. That is how they can
+  be chained together. So a whole Linked List is essentially just chained up
+  Nodes
+  
+'''
+
 
 # Create Node 
 class Node(object):
