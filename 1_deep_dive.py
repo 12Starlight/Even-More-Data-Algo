@@ -26,7 +26,7 @@ print Solution().fib(10)
 # print Solution().fibIterative(10)
   
 
-# Banned Maximum Number Of Colored Squares Connected To Each Other
+# Banned 'Maximum Number Of Colored Squares Connected To Each Other' Google Q
 class Solution:
   def maxConnected(self, grid):
     maxCount = 0
