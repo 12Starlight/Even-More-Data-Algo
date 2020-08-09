@@ -2,7 +2,8 @@
   # lookup, insert, delete O(1) Time
   # not ordered
     # key is hashed, moded, and put in bucket
-    # collisions are turned into a LinkedList
+    # collisions are turned into a LinkedList, HashMap, BST depending on the 
+    # language
 # Type 'python' in terminal for interactive terminal
 
 
