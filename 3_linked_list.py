@@ -1,11 +1,16 @@
 # LinkedList
 
 
+# Create Node 
 class Node(object):
-  def __init__(self, value, next=None):
+  def __init__(self, value, next=None, prev=None):
     self.value = value
     self.next = next 
+    # Doubly LinkedList
+      # Then assign to prior pointers 
+    self.prev = prev
   
+  # override _str_(self) to print values
   def __str__(self):
     curr = self
     output = ''
@@ -16,3 +21,19 @@ class Node(object):
 
 n = Node(1, Node(2, Node(3)))
 print(n)
+
+
+# Convert Array To LinkedList
+def list2LinkedList(nums):
+  head = None 
+  curr = None 
+  for n in nums:
+    if not head:
+      head = Node(n)
+      curr = head 
+    else: 
+      curr.next = Node(n)
+      curr = curr.next
+  return head
+
+print(list2LinkedList([10, 20, 30]))
