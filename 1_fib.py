@@ -23,7 +23,7 @@ class Solution:
       return sum
 
 print Solution().fib(10)
-print Solution().fibIterative(10)
+# print Solution().fibIterative(10)
   
 
 # Banned Maximum Number Of Colored Squares Connected To Each Other
@@ -100,6 +100,21 @@ grid = [
   ['g', 'g', 'r']
 ]
 
-print Solution().maxConnected(grid)
+# print Solution().maxConnected(grid)
 
 
+# Fib Using Caching Or Memoization
+# O(N) Time
+class Solution:
+  def fibMemoized(self, n, cache = {}):
+    if n not in cache.keys():
+      cache[n] = self._fibMemoizedHelper(n, cache)
+    return cache[n]
+
+  def _fibMemoizedHelper(self, n, cache):
+    if n < 2:
+      return n
+    else:
+      return self.fibMemoized(n-1, cache) + self.fibMemoized(n-2, cache)
+
+print Solution().fibMemoized(100)
