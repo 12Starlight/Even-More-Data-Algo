@@ -1,5 +1,5 @@
 # HashMap
-  # lookup, insert, delete O(1) Time
+  # lookup, insert, delete Avg: O(1) Time, Worst: O(N) Time 
   # not ordered
     # key is hashed, moded, and put in bucket
     # collisions are turned into a LinkedList, HashMap, BST depending on the 
