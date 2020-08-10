@@ -9,6 +9,15 @@ class Node(object):
     for child in self.children:
       child.preorder() 
 
+  # Pre Order Iterative
+  def preorderIter(self):
+    stack = [self]
+    while len(stack):
+      node = stack.pop()
+      print(node.value)
+      for child in reversed(node.children):
+        stack.append(child)
+
   # Post Order Recursive
   def postorder(self):
     for child in self.children:
@@ -27,7 +36,11 @@ root = Node('a', [Node('b', [Node('d'), Node('e')]), Node('c', [Node('f')])])
 
 root.preorder()
 # abdecf
-print("")
+print('')
 
 root.postorder()
 # debfca
+
+print('')
+root.preorderIter()
+# abdecf
