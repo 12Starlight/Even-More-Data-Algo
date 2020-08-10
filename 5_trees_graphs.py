@@ -1,3 +1,20 @@
+'''
+Trees & Graphs:
+  Pre Order Traversal
+    -> To visualize this, draw each node in the tree. Then draw a line to the 
+    left of each node. Then connect the dots
+
+       a
+     /   \
+    b     c
+   / \   / \
+  d   e f   g
+
+  abdecfg
+
+'''
+
+
 from queue import deque
 
 class Node(object):
