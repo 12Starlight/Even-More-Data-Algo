@@ -29,10 +29,18 @@ print(s.pop())
 
 
 # Create Queue
-from queue import deque
+from collections import deque
 
-q = deque
+q = deque()
 q.appendleft(1)
 q.appendleft(2)
 q.appendleft(3)
 print(q)
+
+# Peek (ref the -1 index, traverse from the end of the array, gets last elm)
+print(q[-1])
+
+# Get reverse values in the order the came in
+print(q.pop())
+print(q.pop())
+print(q.pop())
