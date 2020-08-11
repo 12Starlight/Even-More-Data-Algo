@@ -1,13 +1,13 @@
 '''
   Stack: LIFO (Last In First Out)
-    * push()
-    * pop()
-    * peek()
+    * push()  O(1) Time | O(N) Space
+    * pop()  O(1) Time | O(N) Space
+    * peek()  O(1) Time | O(N) Space
 
   Queue: FIFO (First In First Out)
-    * push()/enqueue()
-    * pop()/dequeue()
-    * peek()
+    * push()/enqueue()  O(1) Time | O(N) Space
+    * pop()/dequeue()  O(1) Time | O(N) Space
+    * peek()  O(1) Time | O(N) Space
 
 '''
 
