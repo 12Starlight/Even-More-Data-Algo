@@ -31,6 +31,39 @@ Binary Search Tree:
   a hint that the fastest way we can construct a Binary Search Tree is 
   N * Log(N). 
 
+  Bringing up another point, if you take a look at this Binary Search Tree, you 
+  can kin or represnt it as an array. Like let us pretend we just have a sorted
+  array with the values one, five, seven, ten, fourty, and fifty. And let us 
+  pretend that we are searching for a specific value, say the value of seven.
+
+    [1, 5, 7, 10, 40, 50]
+           ^
+
+  Well, how can you do that? Well essentially, the first thing you can do is 
+  bisect this array. Let us just take a look at the middle number 10, and is 
+  this number greater or less than 10. Well, it is less than, so then we can 
+  bisect this again and take a look at this smaller half.
+
+    [1, 5, 7, (10), 40, 50]
+           ^  
+
+    [1, 5, 7]
+           
+  And so now we take a look at this one, five, seven an we take a look at this
+  middle number five, and we determine that the number seven has to be to the
+  right of that. So then we bisect this again and we take a look at the value
+  seven, and essentially we found that number.
+
+    [1, (5), 7]
+             ^
+
+    [7] <-
+
+  And so this algorithm is known as a Binary Search and essentially the 
+  algorithm for Binary Search looks very, very similar to the algorithm for a 
+  Binary Search in the Binary Search Tree. It is just that one is an array and
+  the other is a tree. 
+
 '''
 
 
