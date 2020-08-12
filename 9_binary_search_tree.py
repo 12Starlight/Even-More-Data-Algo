@@ -16,6 +16,21 @@ Binary Search Tree:
     V
   Binary Search Tree
 
+  You are basically inserting N elements into a Binary Search Tree that is of 
+  H (height) Log(N), and you just traverse through the height of that Binary
+  Tree and find the position to insert it and add it there, and repeatedly you do
+  so.
+
+  So you can imagine that the time complexity of building a Binary Search Tree
+  is N * Log(N). And that makes sense, bc if you think about it, the fastest 
+  sort algorithm that we have is also N * Log(N) time and Binary Search Trees,
+  essentially sort all of the elments.
+
+  So, if there was possibly a faster way to build a Binary Search Tree, then you
+  would essentually have a faster sort algorithm than, N * Log(N) which gives us
+  a hint that the fastest way we can construct a Binary Search Tree is 
+  N * Log(N). 
+
 '''
 
 
