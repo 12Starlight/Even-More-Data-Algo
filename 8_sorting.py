@@ -15,3 +15,13 @@ def bubbleSort(arr):
     for j in range(0, n - i - 1):
       if arr[j] > arr[j + 1]:
         arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+# inserts every array element into its proper position by shifting the number
+def insertionSort(arr):
+  for i in range(1, len(arr)):
+    key = arr[i]
+    j = i - 1
+    while j >= 0 an key < arr[j]:
+      arr[j + 1] = arr[j]
+      j--
+    arr[j + 1] = key
