@@ -33,3 +33,25 @@ class Node:
 #   1   3     7
 
 node = Node(4, Node(2, Node(1), Node(3)), Node(6, None, Node(7)))
+
+# In Order
+def inorder(node):
+  if not node:
+    return
+  inorder(node.left)
+  print(node.val)
+  inorder(node.right)
+
+inorder(node)
+print('')
+
+# Pre Order
+def preorder(node):
+  if not node:
+    return
+  print(node.val)
+  preorder(node.left)
+  preorder(node.right)
+
+preorder(node)
+print('')
