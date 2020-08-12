@@ -67,5 +67,22 @@ def search(node, key):
   else: 
     return search(node.left, key)
 
-print(search(node, 6).val)
-print(search(node, 57))
+print(search(node, 6).val) # 6
+print(search(node, 57)) # None
+print('')
+
+# Binary Search
+def binarySearch(nums, low, high, x):
+  if high < low:
+    return None 
+  mid = (low + high) // 2
+  if nums[mid] == x:
+    return mid 
+  elif nums[mid] > x:
+    return binarySearch(nums, low, mid - 1, x)
+  else:
+    return binarySearch(nums, mid + 1, high, x)
+
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(binarySearch(nums, 0, len(nums) - 1, 4)) # 3
+print(binarySearch(nums, 0, len(nums) - 1, 40)) # None
