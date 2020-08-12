@@ -55,3 +55,17 @@ def preorder(node):
 
 preorder(node)
 print('')
+
+# Search
+def search(node, key):  
+  if not node:
+    return None 
+  if node.val == key: 
+    return node 
+  if key > node.val: 
+    return search(node.right, key)
+  else: 
+    return search(node.left, key)
+
+print(search(node, 6).val)
+print(search(node, 57))
