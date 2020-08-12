@@ -8,6 +8,9 @@ Sorting
 '''
 
 
+arr = [1, 2, 8, 9, 5, 3, 4, 7, 6]
+
+
 # iterates through array swapping elements to find the smallest
 def bubbleSort(arr):
   n = len(arr)
@@ -16,12 +19,20 @@ def bubbleSort(arr):
       if arr[j] > arr[j + 1]:
         arr[j], arr[j + 1] = arr[j + 1], arr[j]
 
+bubbleSort(arr)
+print(arr)
+print('')
+
 # inserts every array element into its proper position by shifting the number
 def insertionSort(arr):
   for i in range(1, len(arr)):
     key = arr[i]
     j = i - 1
-    while j >= 0 an key < arr[j]:
+    while j >= 0 and key < arr[j]:
       arr[j + 1] = arr[j]
-      j--
+      j -= 1
     arr[j + 1] = key
+
+insertionSort(arr)
+print(arr)
+print('')
