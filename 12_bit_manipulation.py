@@ -260,3 +260,30 @@ Hex To Decimal:
     = 3002
 
 ''' 
+
+'''
+Operations:
+
+  The result equals one or not
+
+  AND = Both values are 1 = 1
+
+  OR = Either values are 1 = 1
+
+  LSHFT = Shifts to the left (add space to right)
+
+  RSHFT = Shifts to the right (delete space to right)
+
+  XOR = Both values different = 1
+
+
+  AND     OR      LSHFT     RSHFT     XOR
+
+  &       |       <<        >>        ^
+
+  101     101     101 << 1  101 >> 1  101
+  011     011     =         =         011
+  ---     ---     1010      10        ---
+  001     111                         110
+
+'''
