@@ -14,25 +14,26 @@ Bit Manipulation:
   
   Binary Code: https://www.youtube.com/watch?v=jvx-NrILgpE
 
-    The computer iteself does not 'think' in Decimal.
+    The computer iteself does not 'think' in Decimal. It stores values as
+    electrical charges that can be measured as either Low or High, Off or On,
+    zero or one. 
+
+      [1][0][1][0]
 
 
+    This system is known as 'Binary', and in binary, each digit is known as a
+    bit.
+
+      [1][0][1]  [0] <- bit
 
 
-
-
-
-
-
-    Each place represents a base 2 to a power
+    Each place represents a base 2 to a power. We call it Base_2
 
       101
     -------
     (1) -> 2^2 ~ (0) -> 2^1 ~ (1) -> 2^0
 
         4   +   0   +   1   =   5
-
-    We call it Base_2
 
     
     A Byte = 8 bits 
@@ -47,42 +48,157 @@ Bit Manipulation:
     (255, 255, 255) => Maxed out bits in each category, giving white
 
 
+    A bit can hold a maximum value of 1, in order to represent more than 1 we
+    we need to add another bit. So a 2 binary looks like this ...
+
+         [1] = 1
+
+      [1][0] = 2
+
+
+    And a three will look like this ...
+
+      [1][1] = 3
+
+
+    As we keep counting up to ten, you will notice that binary uses up a lot 
+    more space compared to good old decimal notation.
+
+      [1][0][0] = 4
+
+      [1][0][1] = 5
+
+      [1][1][0] = 6
+
+      [1][0][0][0] = 8
+
+      [1][0][1][0] = 10
+
+
+    And that is just a 4-bit value, most computers nowdays work with binary 
+    values of 32-bit length ...
+
+      32-bit value
+      [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+
+
+    Some even use 64-bit values ...
+
+      64-bit value
+      [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]      
+      [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]      
+
+
+    At this point, even if we displayed these values in decimal notation, they
+    are just rediculously long and unwieldy. So when writing code, it is helpful
+    to have a more convenient way to represent them. A that is where
+    'Hexadecimal' notation comes in handy.
+
+      0xFF301B
+
+
   Hexidicimal is Base 16:
 
-    0 1 2 3 4 5 6 7 8 9 a b c d e f => 16 symbols
+    Hexadecimal, or simply 'hex' as it is known to friends, uses 16 characters
+    to represent a number value. Like decimal, it uses the classics. But it also
+    uses letters, to represent values 10 through 15 it uses letters like so ...
+                        
+      0 = zero
+      1 = one
+      2 = two
+      3 = three
+      4 = four
+      5 = five
+      6 = six
+      7 = seven
+      8 = eight
+      9 = nine
+      A = ten
+      B = eleven
+      C = twelve
+      D = thirteen
+      E = fourteen
+      F = fifteen
+
+
+    Bc of those extra characters, hexadecimal notation takes up less space in
+    text. Making it easier for us humans to type out or even simply remember a
+    specific value.
+
+      Binary = 11111100
+
+      Decimal = 256
+
+      Hex = FC
+
+
+      Binary = 11101111 11001111 11111010
+
+      Decimal = 15716346
+
+      Hex = EFCFFA
+
+
+    Oh but wait - that is not all! Hex also syncs up nicely with the way we 
+    group Binary bits. In Binary - a group of four bits is called a 'nybble'.
+
+      [1][1][0][0] <- nybble
+
+
+    And a nybble can conveniently be represented by a single character in
+    hexadecimal. 
+
+      Binary  
+      [1][1][0][0]      
+
+      Hex
+      [C]
+
+
+    A group of 8 bits in Binary is called a 'byte', and can be represented using
+    only 2 hex characters.
+
+      Binary
+      [1][1][0][0][1][1][1][0] <- byte
+
+      Hex
+      [C][E]
+
+
+    In order to clearly specify when we are using hexadecimal in code, we add a
+    '0x' at the beginning of the value. This makes sure we do not mistake it for
+    decimal notation. 
+
+    But in the end - no matter what system we use to represent a value in code.
+    It will always be converted to binary and use the same amount of space 
+    within digital memory. So regardless of what we see on the screen, 
+    underneath it all - it is bits all the way down. 
+
 
     8 bits in a byte, max 255
 
       0x8 is 8
-
       0x9 is 9
-
       0xa is 10
-
-    We call it Base_16
-
       0x63 is 99
-
-      0xff is 100
-
-      0xfe is 254
-      
-      Oxff is 255
-
-    Decimal is using 3 digits, hex only 2! So, 2 digits, Oxff, is a full Byte
-
-      16 bits, 2 Bytes, max 65535
-
-      0xfffe is 65534
-
-      0xffff is 65535
-
-    So 4 digits, 0xffff, is 2 Bytes (16 bits)
+      0xFF is 100
+      0xFE is 254
+      OxFF is 255
 
 
-                    Ox af
+    Decimal is using 3 digits, hex only 2! So, 2 digits, OxFF, is a full Byte
 
-          a                     f
+      16 bits, 2 bytes, max 65535
+      0xFFFE is 65534
+      0xFFFF is 65535
+
+
+    So 4 digits, 0xFFFF, is 2 bytes (16 bits)
+
+
+                    Ox AF
+
+          A                     F
 
     1    0    1    0      1    1    1    1  
 
@@ -101,7 +217,8 @@ Bit Manipulation:
 
     3 Bytes, 1 Byte per color channel
     
-    # ff ff 00
+    # FF FF 00
+
 
 
 Decimal To Hex:
@@ -115,13 +232,13 @@ Decimal To Hex:
     So... 121 is 0x79
 
   
-  3002 / 16 = 187 remainder 10:     a
+  3002 / 16 = 187 remainder 10:     A
 
-  187 / 16 = 11 remainder 11:       b
+  187 / 16 = 11 remainder 11:       B
 
-  11 can not be divided by 16:      b
+  11 can not be divided by 16:      B
 
-    So... 3002 is 0xbba
+    So... 3002 is 0xBBA
 
 
 Hex To Decimal:
@@ -129,20 +246,15 @@ Hex To Decimal:
   0x79 is
 
     = (7 * 16) + 9
-
     = 112 + 9 = 121
 
   NB (Latin for 'note well'): Technically it is (7 * 16^1) + (9 * 16^0)
 
 
-  0xbba is
-
-
+  0xBBA is
 
     = (11 * 16^2) + (11 * 16^1) + 10
-
     = (11 * 256) + (11 * 16) + 10
-
     = 2816 + 176 + 10
 
     = 3002
