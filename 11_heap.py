@@ -51,5 +51,30 @@ print(heapq.heappop(arr))
 
 
 '''
+  Here is the code algorithm for heapsort, along with the hand-written
+  implementation of a heap. It is a bit of a complex algorithm, but this is as
+  simple as I could make it. After watching the video, take a look and try to 
+  understand how it is functioning.
 
 '''
+
+def heapify(arr, n, i):
+  largest = i # Initialize largest as root
+  left = 2 * i + 1 # left = 2 * i + 1
+  right = 2 * i + 2 # right = 2 * i + 2
+
+  # See if left child of root exists and is greater than root
+  if left < n and arr[largest] < arr[left]:
+    largest = left
+
+  # See if right child of root exists and is greater than root
+  if right < n and arr[largest] < arr[right]:
+    largest = right
+
+  # Change root, if needed
+  if largest != i:
+    arr[i], arr[largest] = arr[largest], arr[i] # swap 
+
+    # Heapify the root
+    heapify(arr, n, largest)
+
