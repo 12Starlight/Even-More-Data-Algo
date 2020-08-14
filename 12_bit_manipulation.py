@@ -384,4 +384,50 @@ More Advanced
 '''
 
 # Let us say we want to take a number and convert it into the bit representation
-# and see what that looks like. So, we want say
+# and see what that looks like. So, we want say print(num2bits(5)) and we want
+# this to show the value of one, zero, one. What does this code look like? 
+def num2bits(num): 
+  result = ''
+  # going through number
+  while num: 
+    # the result is equal to the string value of the number and one. So we are
+    # taking that far right bit value and we are checking if it is one or not, 
+    # and then we are just going to add it to that result
+    result = str(num & 1) + result
+    # then we are going to shift the number over by one and we just keep doing
+    # that until we have shifted away all of the bits. 
+    num = num >> 1
+    # get the value 101, so that is correct 
+  return result 
+
+print('')
+print(num2bits(5)) # 101
+
+# In Python they have the built in method called 'bin'
+print('')
+print(bin(5)) # 0b101 
+
+
+# We can also do this in reverse by taking a string and converting it to bits.
+# And we want this to print the value five. So, let us see what that is going to
+# look like?
+def bits2num(bits):
+  num = 0
+  # for each bit in bits
+  for bit in bits:
+    # take the current number and shift it over by one. So we are making room 
+    # for this new bit
+    num = num << 1
+    # if the bit value is equal to one, then we will just say that the number 
+    # plus equals one and we will just keep going through all of the bits unitl
+    # we get to the end
+    if bit == '1':
+      num += 1 
+  return num
+
+print('')
+print(bits2num('101')) # 5
+
+# In Python does have a handy dandy built in method that is known as 0b
+print(0b101) # 5
+
