@@ -431,3 +431,49 @@ print(bits2num('101')) # 5
 # In Python does have a handy dandy built in method that is known as 0b
 print(0b101) # 5
 
+
+# Another exercise we can do is count the total number of one bits in a series
+def countbits(num):
+  # the number of bits is equal to zero
+  num_bits = 0
+  # while the number is not zero
+  while num:
+    # we are just going to start shifting it. So, we will say num_bits plus 
+    # equals to check whether the number has a value of one or zero on the far 
+    # right side, THEN we add that value to num_bits
+    num_bits += num & 1
+    # then the num >>= acts like i -= 1 for the while loop and slices off the 
+    # last bit till there are no more 
+    num >>= 1
+  # return the total number of bits that we were able to count so far to run 
+  # this which you see that I am getting the value two, which is correct. 
+  return num_bits
+
+pirnt('')
+print(countbits(5)) # 2
+
+
+# And there is one more common interview exercise which I thought I should show 
+# you. So here is how it works. Let us say you have an array like say, four, 
+# one, four, two, two. And so the idea is that our numbers appear twice in this 
+# array except for one number. And that one number only appears once, find that 
+# number.
+#
+#   [4, 1, 4, 2, 2] 
+#
+# Well if you think about it, what you can do here is you can actually just go 
+# through this whole array and use the XOR operator to XOR the numbers together
+# bc a number XOR'd by iteself is going to equal 0. And the reason is that as we
+# mentioned, the result of a XOR operation is only one when both bits are 
+# different
+# 
+# But, when you XOR a number with itself, all of the bits are going to be the 
+# same. And so all of the bits would be zero. We can go through the array and 
+# just XOR everything together. 
+#
+# And then the last value that is there is going to be the single number XOR'd 
+# by zero, which is essentially still just that same number, bc all of the bits 
+# remained on toggle that they do not switch. 
+
+
+# 
