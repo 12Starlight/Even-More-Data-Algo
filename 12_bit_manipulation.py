@@ -277,15 +277,111 @@ Operations:
     XOR = Both values different = 1
 
 
-  AND     OR      LSHIFT    RSHIFT    XOR
+  AND           OR           LSHIFT          RSHIFT          XOR
 
-  &       |       <<        >>        ^
+  &             |            <<              >>              ^
 
-  101     101     101 << 1  101 >> 1  101
-  011     011     =         =         011
-  ---     ---     1010      10        ---
-  001     111                         110
+  101           101      5 = 101 << 1    5 = 101 >> 1        101
+  011           011          =               =               011
+  ---           ---     10 = 1010        2 = 10              ---
+  001           111                                          110
+
+  1&1 = 1   1|1 = 1          multiply        divide         -> 1^1 = 0
+  0&1 = 0   0|1 = 1          by 2            by 2            0^0 = 0
+                                                             1^0 = 1
+  checks    turns on                                        -> 0^1 = 1   
+
+                                                            toggle
+
+
+  Okay, so if we were to try to see this in action, let us pretend we have the
+  bits one, one, zero, one, and we want to switch off this second bit.
+
+    [1][1][0][1]
+        ^
+
+  We want to conver this number into one, zero, zero, one. How do we do that?
+
+    [1][0][0][1]
+
+
+  Well, what you could do is you could take the number, we will represent it by
+  N and we will say, let us toggle this second bit. So, we need to toggle it 
+  with essentially the representation of zero, one, zero, zero. How do we get 
+  that?
+
+    n ^ (0100)
+
+
+  Well, you can say, let us take the number one and shift it over by two. 
+
+    1 << 2
+
+
+  So this is actually going to look like n XOR one shifted by two, right? This 
+  is what it is going to look like. 
+
+    n ^ (1 << 2)
+
+
+  And so this is essentially the formula for just toggling that second bit.
+  Okay. so let us try writing this in code. 
 
 '''
 
 
+# Three Lights
+l1 = 0b001
+l2 = 0b010
+l3 = 0b100
+
+print(l1) # 1
+print(l2) # 2
+print(l3) # 4
+
+# What does it look like to toggle all the lights on?
+print('')
+print(l1 | l2 | l3) 
+  # -> gets you the value 7
+
+
+# Let us say that the current state of the light is going to be light one or 
+# light two. So, I have turned both of these on, and now I want to check is 
+# light three on?
+state = l1 | l2 
+print('')
+print(state)
+
+
+# Well what you can do is AND that state with one zero, to see if that value is
+# on. 
+print('')
+print(state & 0b1)
+  # -> No, it was off. And so the AND operator is often used to check whether a
+  # bit is on or off.
+
+
+# Now the OR operator can be used to toggle a state. So I can say state OR 
+# equals l3 and then if I print that I get the value 7, which represents 111. 
+# Now the lights are on.
+state |= l3 
+print('')
+print(state)
+
+
+# And then the XOR operator kind of acts like a toggle. So I can say, let me
+# turn off the second light. So I will say XOR equals 010. So that should only
+# turn off the second light. If I have to print the state, then you see I am 
+# getting five, which is 101.
+state ^= 0b010
+print('')
+print(state)
+
+
+'''
+More Advanced
+
+'''
+
+# Let us say we want to take a number and convert it into the bit representation
+# and see what that looks like. So, we want say
