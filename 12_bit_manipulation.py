@@ -264,20 +264,20 @@ Hex To Decimal:
 '''
 Operations:
 
-  The result equals one or not
+  The result equals one or not one:
 
-  AND = Both values are 1 = 1
+    AND = Both values are 1 = 1
 
-  OR = Either values are 1 = 1
+    OR = Either values are 1 = 1
 
-  LSHFT = Shifts to the left (add space to right)
+    LSHIFT = Shifts to the left (add space to right)
 
-  RSHFT = Shifts to the right (delete space to right)
+    RSHIFT = Shifts to the right (delete space to right)
 
-  XOR = Both values different = 1
+    XOR = Both values different = 1
 
 
-  AND     OR      LSHFT     RSHFT     XOR
+  AND     OR      LSHIFT    RSHIFT    XOR
 
   &       |       <<        >>        ^
 
@@ -287,3 +287,5 @@ Operations:
   001     111                         110
 
 '''
+
+
